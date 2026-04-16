@@ -30,7 +30,11 @@ RESPONSIVE — 900px (MOBILE NAV & HERO POLISH)
     z-index: 100;
     box-shadow: -15px 0 50px rgba(0,0,0,0.6);
   }
-  .nav { justify-content: center; }
+  .nav {
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 56px; /* space for the fixed burger (16px right + ~8px pad + 24px icon + buffer) */
+  }
   nav ul {
     flex-direction: column;
     justify-content: center;
@@ -44,14 +48,15 @@ RESPONSIVE — 900px (MOBILE NAV & HERO POLISH)
 
   .burger {
     display: flex;
-    position: absolute;
+    position: fixed;       /* stays visible when drawer is open */
+    top: 18px;
     right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(37, 99, 235, 0.1);
-    border: 1px solid rgba(37, 99, 235, 0.2);
+    z-index: 300;          /* above nav drawer z-index:100 */
+    background: rgba(37, 99, 235, 0.12);
+    border: 1px solid rgba(37, 99, 235, 0.25);
     border-radius: 8px;
     padding: 8px;
+    cursor: pointer;
   }
 
   /* HERO MOBILE OPTIMIZATION */
