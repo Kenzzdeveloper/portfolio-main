@@ -8,18 +8,17 @@
 }
 
 /* ==============================
-   RESPONSIVE — 900px (MOBILE NAV)
+RESPONSIVE — 900px (MOBILE NAV & HERO POLISH)
 ============================== */
 @media screen and (max-width: 900px) {
-
   /* MOBILE NAV */
   nav {
     position: fixed;
     right: 0;
     top: 0;
     height: 100vh;
-    width: 70%;
-    max-width: 320px;
+    width: 75%;
+    max-width: 300px;
     background-color: var(--bg-card);
     border-left: 1px solid var(--border);
     display: flex;
@@ -29,86 +28,76 @@
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 100;
-    box-shadow: -20px 0 60px rgba(0,0,0,0.5);
+    box-shadow: -15px 0 50px rgba(0,0,0,0.6);
   }
-
-  .nav {
-    justify-content: center;
-  }
-
-  
-
+  .nav { justify-content: center; }
   nav ul {
     flex-direction: column;
     justify-content: center;
     height: auto;
-    gap: 2.5rem;
+    gap: 2rem;
     text-align: center;
   }
-
   nav ul li { opacity: 1; }
+  nav ul li a { font-size: 1.05rem; }
+  .nav-active { transform: translateX(0%); }
 
-  nav ul li a {
-    font-size: 1.1rem;
-  }
-
-  .nav-active {
-    transform: translateX(0%);
-  }
-
-  /* BURGER */
   .burger {
     display: flex;
-    position: absolute; /* Mengubah dari fixed agar relatif terhadap header */
-    right: 20px;
+    position: absolute;
+    right: 16px;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(37, 99, 235, 0.1); /* Memberi latar belakang biru transparan */
+    background: rgba(37, 99, 235, 0.1);
     border: 1px solid rgba(37, 99, 235, 0.2);
     border-radius: 8px;
     padding: 8px;
   }
 
-
-  /* HERO */
+  /* HERO MOBILE OPTIMIZATION */
   #hero {
     grid-template-columns: 1fr;
-    padding: 4rem 0 5rem;
-    gap: 2.5rem;
+    padding: 3rem 0 4rem;
+    gap: 2rem;
     text-align: center;
     justify-items: center;
   }
-
   .hero-left {
     align-items: center;
     max-width: 100%;
+    padding: 0 1rem;
   }
-
-  .hero-left .pre-title {
-    margin: 0 auto;
-  }
-
+  .hero-left .pre-title { margin: 0 auto; }
   .hero-left p {
     text-align: center;
     max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.7;
   }
-
   .hero-buttons {
     justify-content: center;
+    flex-wrap: wrap;
   }
-
   .hero-right {
     justify-content: center;
     order: -1;
   }
-
   .hero-right .img-card {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
   }
+  .hero-name { font-size: 2.3rem; }
+  .main-container { width: 92%; }
 
-  .main-container { width: 90%; }
+  /* CERT GRID MOBILE SPACING */
+  .cert-grid {
+    gap: 1.2rem;
+  }
 }
+
+/* ==============================
+RESPONSIVE — 480px (TIGHT MOBILE)
+============================== */
 
 /* ==============================
    RESPONSIVE — 720px
@@ -130,21 +119,32 @@
    RESPONSIVE — 480px
 ============================== */
 @media screen and (max-width: 480px) {
-  .hero-name { font-size: 2rem; }
-
+  .hero-name { font-size: 1.9rem; }
+  .section-title { font-size: 1.5rem; margin: 0.8rem 0 2.5rem; }
+  
   .hero-buttons {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.8rem;
   }
-
   .hero-buttons .btn,
   .hero-buttons .btn-outline {
     width: 100%;
     text-align: center;
+    padding: 0.85rem 1rem;
   }
-
-  .portfolio-cover {
-    height: 180px;
+  
+  .portfolio-cover { height: 160px; }
+  
+  /* Certificates single column on very small screens */
+  .cert-grid {
+    grid-template-columns: 1fr;
+    padding: 0 0.5rem;
+  }
+  .cert-img-wrapper::after {
+    font-size: 0.75rem;
+    padding: 0 1rem;
   }
 }
 
